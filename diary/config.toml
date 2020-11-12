@@ -1,0 +1,10 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Learning Diary"
+theme = "tale"
+
+[Author]
+    name = "Jan Kaiponen"
+
+[Params]
+css = ["css/custom.css"]
