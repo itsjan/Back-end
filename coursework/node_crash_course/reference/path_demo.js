@@ -22,3 +22,5 @@ console.log(p.base); // path_demo.js
 
 // concatenate paths - adds the correct delimiters
 console.log( path.join(__dirname, 'test', 'test2', 'hello.html') );
+// /.../reference/test/test2/hello.html
+

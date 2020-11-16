@@ -21,7 +21,6 @@ fs.writeFile( // this overwrites the previous contents
 
         // Append to file
 
-
         fs.appendFile( // this overwrites the previous contents
             path.join(__dirname, 'test', 'hello.txt'), 
             ' I love nodejs', err => {
@@ -37,7 +36,6 @@ fs.writeFile( // this overwrites the previous contents
                         if (err) throw err;
                         console.log(data);
 
-
                         // Rename file
 
                         fs.rename(
@@ -48,8 +46,6 @@ fs.writeFile( // this overwrites the previous contents
                                 console.log('File renamed ..');
                             }
                         )
-
-
                     }
                 )
 
