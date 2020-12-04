@@ -3,3 +3,25 @@ GET http://localhost:3000/api/members
 ###
 
 GET http://localhost:3000/api/members/4
+
+###
+POST http://localhost:3000/api/members/
+Content-Type: application/json
+
+{ "id":"3", "name": "John Doe Jr", "email": "jd.jr@email.com", "status":"a"}
+
+### name, email missing
+
+POST http://localhost:3000/api/members/
+Content-Type: application/json
+
+{ "id":"3", "email": "jd.jr@email.com", "status":"a"}
+
+
+### email missing
+
+POST http://localhost:3000/api/members/
+Content-Type: application/json
+
+{ "id":"3", "name": "John Doe Jr",  "status":"a"}
+

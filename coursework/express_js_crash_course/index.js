@@ -7,6 +7,11 @@ require('dotenv').config()
 // Logger middleware
 app.use(require('./middleware/logger'));
 
+// Body parser Middleware
+// docs https://expressjs.com/en/5x/api.html#express.urlencoded
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+
 // Static folder (Serve files in the public folder)
 app.use(express.static(path.join(__dirname, 'public')));
 
