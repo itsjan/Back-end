@@ -1,0 +1,39 @@
+GET http://localhost:3004/api/person
+
+###
+
+POST http://localhost:3004/api/person
+Content-Type: application/json
+
+{
+    "name": {
+        "first": "John",
+        "last" : "Doe The Third"
+    },
+    "comms" : [
+        {
+            "comms_type" : "EMAIL",
+            "locator" : "jd@email.com"
+
+        }
+    ]    
+
+}
+
+
+###
+
+POST http://localhost:3004/api/user
+Content-Type: application/json
+
+{
+    "username" : "JO!HNSR_4",
+    "email" : "johndo2e44@mail.com",
+    "name" : {"first" : "John", "last" : "Doe"}
+  
+}
+
+
+###
+
+GET http://localhost:3004/api/user

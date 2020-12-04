@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "mongoose-beautiful-unique-validation": "^7.1.1"
+  }
+}
