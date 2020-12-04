@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const uuid = require('uuid')
 
-const members = require('../../data/members')
+var members = require('../../data/members')
 
 
 // Get Members
@@ -17,9 +17,9 @@ router.get('/:id', (req, res) => {
     // some() returns true/false
     const exists = members.some(m => m.id === req.params.id)
     if (exists) {
-        res.json(members.filter(member => member.id === req.params.id)) ;
+        res.json(members.filter(member => member.id === req.params.id));
     } else {
-        res.status(400).json({ message: ` Member with ID#${req.params.id} does not exist in the database` });
+        res.status(400).json({ message: ` Member with ID#${req.params.id} does not exist in the database`, members });
     }
 });
 
@@ -40,7 +40,7 @@ router.post('/', (req, res) => {
 
     // using return above, to avoid using else below
     members.push(newMember); // push to the members array
-    res.json(newMember);
+    res.status(201).json({id : newMember.id, members});
 
 })
 
@@ -57,19 +57,32 @@ router.put('/:id', (req, res) => {
             if (m.id === req.params.id) {
                 m.name = updMember.name ? updMember.name : m.name;
                 m.email = updMember.email ? updMember.email : m.email;
-                return res.status(202).json({"message" : "Member updated", "member":m})
+                return res.status(202).json({ "message": "Member updated", "member": m, members })
                     ;
             }
         })
 
     } else {
-        res.status(400).json({ message: ` Member with ID#${req.params.id} does not exist in the database` });
+        res.status(400).json({ message: ` Member with ID#${req.params.id} does not exist in the database`, members });
     }
-
-
 });
 
+// Delete member
 
+router.delete('/:id', (req, res) => {
+    // some() returns true/false
+    const exists = members.some(m => m.id === req.params.id)
+
+    if (exists) {
+        const updMember = req.body;
+        const keepMembers = members.filter(member => member.id !== req.params.id);
+        members = keepMembers;
+        return res.status(202).json({ message: "Member deleted", members });
+    } else {
+        res.status(400).json({ message: ` Member with ID#${req.params.id} does not exist in the database`, members });
+    }
+
+});
 
 
 module.exports = router

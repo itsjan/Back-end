@@ -1,8 +1,12 @@
+### GET all members
 GET http://localhost:3000/api/members
 
-###
+### GET one member details
+GET http://localhost:3000/api/members/029777a2-2450-4a2c-9d20-0025b570c532
 
-GET http://localhost:3000/api/members/e87ef18c-82da-40e7-a9ff-a5d75c15e74f
+### DELETE
+DELETE http://localhost:3000/api/members/029777a2-2450-4a2c-9d20-0025b570c532
+
 
 ### CREATE NEW MEMBER, CORRECT REQUEST
 POST http://localhost:3000/api/members/
@@ -10,7 +14,19 @@ Content-Type: application/json
 
 { "id":"3", "name": "John Doe Jr", "email": "jd.jr@email.com", "status":"a"}
 
-### name, email missing
+
+### UPDATE email
+
+PUT http://localhost:3000/api/members/e87ef18c-82da-40e7-a9ff-a5d75c15e74f
+Content-Type: application/json
+
+{
+    "email" : "johns_new_email@gmail.com"
+}
+
+
+
+### CREATE, name, email missing
 
 POST http://localhost:3000/api/members/
 Content-Type: application/json
@@ -18,10 +34,13 @@ Content-Type: application/json
 { "id":"3", "email": "jd.jr@email.com", "status":"a"}
 
 
-### email missing
+### CREATE, email missing
 
 POST http://localhost:3000/api/members/
 Content-Type: application/json
 
 { "id":"3", "name": "John Doe Jr",  "status":"a"}
+
+
+
 
