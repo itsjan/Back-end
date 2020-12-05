@@ -1,12 +1,25 @@
 const express = require('express');
-const hbs = require('express-handlebars')
+const exphbs = require('express-handlebars')
 const path = require('path')
 require('dotenv').config()
 const members = require('./data/members')
 
+var hbs = exphbs.create({
+    defaultLayout: "main",
+    extname: ".handlebars",
+    helpers: {
+      section: function(name, options) { 
+        if (!this._sections) this._sections = {};
+          this._sections[name] = options.fn(this); 
+          return null;
+        }
+    }    
+  });
+
 const app = express();
-app.engine('handlebars', hbs());
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars')
+
 
 
 // Logger middleware

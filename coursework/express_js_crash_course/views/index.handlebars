@@ -16,4 +16,32 @@
     <li class="list-group-item">{{this.name}}: {{this.email}}</li>
     {{/each}}
 </ul>
+
+<table id="members" class="display" style="width: 100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each members}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.email}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
 <a href="/api/members" class="btn btn-light mt-4">/api/members</a>
+
+{{#section 'script'}}
+
+
+<script type="text/javascript">$(document).ready(function () {
+        $('#members').DataTable();
+    });
+</script>
+
+{{/section}}
