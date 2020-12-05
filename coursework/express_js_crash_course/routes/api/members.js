@@ -40,7 +40,8 @@ router.post('/', (req, res) => {
 
     // using return above, to avoid using else below
     members.push(newMember); // push to the members array
-    res.status(201).json({id : newMember.id, members});
+    //res.status(201).json({id : newMember.id, members});
+    res.redirect('/')
 
 })
 
