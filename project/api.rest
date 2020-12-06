@@ -1,39 +1,48 @@
-GET http://localhost:3004/api/person
+GET http://localhost:3004/api/users
 
 ###
+GET http://localhost:3004/api/users/by/username/johndoe
+###
+GET http://localhost:3004/api/users/by/username/johndor?x=777&y=fjkdj
+###
+GET http://localhost:3004/api/users/by?usernames=johndoejr,johndoe
+###  GET (error)
+GET http://localhost:3004/api/users/by?names=nimi1,nimi2
+### DELETE
+DELETE http://localhost:3004/api/user/joöhnsr_iv
 
-POST http://localhost:3004/api/person
+###
+PUT http://localhost:3004/api/user/joöhnsr_4
+Content-Type: application/json
+
+{
+  "fullname": "Firsname Lastname",
+  "email": "u@mail.com",
+  "__v": 0
+}
+
+### CREATE
+
+POST http://localhost:3004/api/users
 Content-Type: application/json
 
 {
     "name": {
-        "first": "John",
-        "last" : "Doe The Third"
+        "first": "Bob",
+        "last" : "Doe"
     },
-    "comms" : [
-        {
-            "comms_type" : "EMAIL",
-            "locator" : "jd@email.com"
-
-        }
-    ]    
+    "username" : "bobdoe",
+    "email" : "b.doe.jr@email.com"
+        
 
 }
 
 
 ###
-
-POST http://localhost:3004/api/user
+POST http://localhost:3004/api/posts/
 Content-Type: application/json
 
 {
-    "username" : "JO!HNSR_4",
-    "email" : "johndo2e44@mail.com",
-    "name" : {"first" : "John", "last" : "Doe"}
-  
+    "authorId" : "5fcce2097838c4acd66ac06e",
+    "text" : "Mongoose also supports populating virtuals. A populated virtual contains documents from another collection. To define a populated virtual..."
 }
-
-
-###
-
-GET http://localhost:3004/api/user

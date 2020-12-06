@@ -1,0 +1,6 @@
+{
+    "name": "Back-End Social (be-social)",
+    "version": "0.1.0",
+    "description": "Project for LUT course Back-end programming 2020-21",
+    "sampleUrl" : "http://localhost:3004/api"
+  }

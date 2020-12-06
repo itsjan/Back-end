@@ -4,6 +4,7 @@ const path = require('path')
 require('dotenv').config()
 const members = require('./data/members')
 
+// https://wolfgang-ziegler.com/blog/a-scripts-section-for-your-handlebars-layout-template
 var hbs = exphbs.create({
     defaultLayout: "main",
     extname: ".handlebars",

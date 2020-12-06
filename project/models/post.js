@@ -22,11 +22,6 @@ schema.virtual('author', {
   });
 
 
-
-// Virtual for this user instance URL.
-schema.virtual('url').get( () => '/u/' + this._id );
-
-
 module.exports = mongoose.model('Post', schema );
 
 
