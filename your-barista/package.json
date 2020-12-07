@@ -1,0 +1,25 @@
+{
+  "name": "your-barista",
+  "version": "1.0.0",
+  "description": "Server application and REST API for a Coffee Shop Membership Program",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "REST",
+    "NodeJS",
+    "MongoDB",
+    "ExpressJS"
+  ],
+  "author": "Jan Kaiponen (x087087)",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.4"
+  }
+}
