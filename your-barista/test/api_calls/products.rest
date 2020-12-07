@@ -1,0 +1,6 @@
+### Get all products
+http://localhost:3005/products
+### Get products in a category
+http://localhost:3005/products?category=Organic Tea
+### Get a single product by id
+http://localhost:3005/products/5fce1197c6d083ebeb68ab3f

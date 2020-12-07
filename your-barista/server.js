@@ -4,9 +4,9 @@ const server = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-// Settong up database connection
+// Setting up database connection
 const dev_db_url = 'mongodb://localhost/';
-const dev_db_name = 'club';
+const dev_db_name = 'club-test';
 const mongoDB_url = process.env.DATABASE_URL || dev_db_url;
 const db_name = process.env.DATABASE_NAME || dev_db_name;
 mongoose.connect( `${mongoDB_url}${db_name}`, { 
@@ -24,7 +24,7 @@ server.use(express.static(path.join(__dirname, 'public')));
 
 // ROUTES
 
-
+server.use('/products', require('./routes/products'));
 
 
 // Starting server
