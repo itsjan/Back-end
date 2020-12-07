@@ -37,7 +37,6 @@ Content-Type: application/json
 
 }
 
-
 ###
 POST http://localhost:3004/api/posts/
 Content-Type: application/json
@@ -46,3 +45,5 @@ Content-Type: application/json
     "authorId" : "5fcce2097838c4acd66ac06e",
     "text" : "Mongoose also supports populating virtuals. A populated virtual contains documents from another collection. To define a populated virtual..."
 }
+###
+GET http://localhost:3004/api/posts/5fcd350fdfe163c8b2c5cd9b

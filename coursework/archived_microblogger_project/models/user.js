@@ -60,8 +60,8 @@ schema.query.byEmail = function (email) {
   return this.where({ email: new RegExp(email, 'i') })
 };
 
-schema.query.missingUserNames = function (usernamesArray) {
-  return usernamesArray.filter (username => this.disctinct('username').indexOf(username) == -1);
-}
+// schema.query.missingUserNames = function (usernamesArray) {
+//   return usernamesArray.filter (username => this.disctinct('username').indexOf(username) == -1);
+// }
 
 module.exports = mongoose.model('User', schema);
