@@ -2,7 +2,7 @@ const path = require('path')
 const express = require('express');
 const server = express();
 const mongoose = require('mongoose');
-require('dotenv').config();
+//require('dotenv').config();
 
 // Setting up database connection
 const dev_db_url = 'mongodb://localhost/';
@@ -25,6 +25,7 @@ server.use(express.static(path.join(__dirname, 'public')));
 // ROUTES
 
 server.use('/products', require('./routes/products'));
+server.use('/memberships', require('./routes/memberships'));
 
 
 // Starting server
