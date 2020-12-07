@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const productSchema = new mongoose.Schema({
+const drinkSchema = new mongoose.Schema({
     category : {
         type: String,
         enum: ['Organic Coffee', 'Organic Tea', 'Hot Drinks'],
@@ -17,4 +17,4 @@ const productSchema = new mongoose.Schema({
 })
 
 
-module.exports = mongoose.model('Product', productSchema)
+module.exports = mongoose.model('Drink', drinkSchema)

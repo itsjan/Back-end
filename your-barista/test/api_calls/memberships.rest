@@ -1,0 +1,9 @@
+### Get a new 30 day membership
+POST http://localhost:3005/memberships
+Content-Type: application/json
+
+{
+    "member_name" : "ALICE"
+}
+###
+GET http://localhost:3005/memberships/5fce325a906628f6d24c4405
