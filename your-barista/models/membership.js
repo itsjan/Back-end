@@ -63,12 +63,13 @@ membershipSchema.virtual('minutes_since_last_redemption').
 
 membershipSchema.virtual('can_redeem').
     get(function () {
+
+        if (!this.is_valid) {
+            return false;
         
         if (this.redemptions.length == 0)
             return true;
 
-        if (!this.is_valid) {
-            return false;
         }
         if (this.redemptions.length == 0) {
             return true;
