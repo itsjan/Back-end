@@ -1,0 +1,17 @@
+POST http://localhost:3005/orders
+Content-Type: application/json
+
+{
+    "drink" : "5fce57fcc6d083ebeb68ab4b"
+}
+###
+POST http://localhost:3005/orders/5fce6493668099013b67424c/redemption
+Content-Type: application/json
+
+{
+    "membership_id" : "5fd0f15ef455bc4b0809b0e0",
+    "qr_code_value" : 
+    "122c0361-bfe3-4e02-b9b1-582ae07ec990"
+}
+###
+GET http://localhost:3005/orders/5fce6493668099013b67424c

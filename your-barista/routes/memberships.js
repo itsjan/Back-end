@@ -7,7 +7,7 @@ router.post('/', async(req, res) => {
     try {
         const newMemberhsip = new Membership(req.body);
         const savedMembership = await newMemberhsip.save();
-        res.status(200).json({"data" : savedMembership})
+        res.status(200).json({"data" : savedMembership});
 
     } catch (error) {
         res.status(500).json({ "errors": { "message": error.message } })
