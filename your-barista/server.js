@@ -24,7 +24,7 @@ server.use(express.static(path.join(__dirname, 'public')));
 
 // ROUTES
 
-server.use('/drinks', require('./routes/drinks'));
+//server.use('/drinks', require('./routes/drinks'));
 server.use('/memberships', require('./routes/memberships'));
 server.use('/orders/', require('./routes/orders'));
 
