@@ -27,6 +27,7 @@ const membershipSchema = new mongoose.Schema({
     }]
 })
 membershipSchema.plugin(require('mongoose-autopopulate'));
+
 // Virtuals 
 
 membershipSchema.virtual('is_valid').
@@ -48,6 +49,7 @@ membershipSchema.virtual('number_of_redemptions_today').
             return acc;
 
         }, 0)
+
         return num;
     });
 
