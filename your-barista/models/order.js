@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const orderSchema = new mongoose.Schema({
-    drink: { type: String, Required: true },
+    drink: { type: String, required: true },
     createdTime: { type: Date, default: Date.now },
     redeemed_time: { type: Date },
     redeemed_by_member_name: {
