@@ -31,10 +31,14 @@ router.get('/:id', async (req, res) => {
 })
 
 // Redeem drink order
-router.get('/:id/redemption/:by_membership_qr_code', async (req, res) => {
+router.post('/:id/redemption/', async (req, res) => {
     try {
         const order_id = req.params.id;
-        const qr_code_value = req.params.by_membership_qr_code;
+        const qr_code_value = req.body.membership_qr_code;
+
+        if ( ! qr_code_value || qr_code_value == '' ) {
+            return res.status(400).json({ message: "QR code is missing" })
+        }
 
         Order.findById(order_id)
             .then(order => {
@@ -64,9 +68,6 @@ router.get('/:id/redemption/:by_membership_qr_code', async (req, res) => {
 
                         Order.findById(order_id)
                             .then(order => {
-                                if (order.redemptions) {
-                                    return res.status(409).json({ message: "Order is already redeemed and cannot be redeemed more times." })
-                                }
 
                                 order.redemption = redemption;
                                 order.redeemed_by_member_name = membership.member_name;
