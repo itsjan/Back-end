@@ -1,102 +1,42 @@
-### REQUEST A NEW MEMBERSHIP
-### 
+### (1) REGISTER A NEW MEMBERSHIP ###################################################
 POST http://localhost:3005/memberships
 Content-Type: application/json
 
 {
-    "member_name" : "GABY"
+    "member_name" : "Harry"
 }
 
-###
-POST http://localhost:3005/memberships
-Content-Type: application/json
-
-{
-    "member_name" : ""
-}
-
-###
+### Response:
 
 HTTP/1.1 200 OK
 X-Powered-By: Express
 Content-Type: application/json; charset=utf-8
 Content-Length: 436
-ETag: W/"1b4-PKnQBfPrW+NGNC9FEuNxvWbsXbA"
-Date: Tue, 15 Dec 2020 13:50:01 GMT
+ETag: W/"1b4-CwLNII7aV08Bd6BOwzH+2AON3Kc"
+Date: Wed, 16 Dec 2020 18:33:26 GMT
 Connection: close
 
 {
   "data": {
     "redemptions": [],
-    "_id": "5fd8bf08a1df8118b5e6d666",
-    "member_name": "GABY",
-    "valid_until": "2021-01-14T13:50:00.995Z",
-    "qr_code_value": "e177ad5d-978f-40e3-b99f-87bac5b1449b",
+    "_id": "5fda52f6e2228a8800f3119f",
+    "member_name": "Harry",
+    "valid_until": "2021-01-15T18:33:26.203Z",
+    "qr_code_value": "682ca052-4876-4841-8587-77d80cb9667d",
     "__v": 0,
     "is_valid": true,
     "number_of_redemptions_today": 0,
     "minutes_since_last_redemption": null,
     "can_redeem": true,
-    "qr_code_url": "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=e177ad5d-978f-40e3-b99f-87bac5b1449b",
-    "id": "5fd8bf08a1df8118b5e6d666"
-  }
-}
-
-### Fabian
-HTTP/1.1 200 OK
-X-Powered-By: Express
-Content-Type: application/json; charset=utf-8
-Content-Length: 437
-ETag: W/"1b5-nBYqpZIya8Q8x4kkNbbTXqVDNCE"
-Date: Tue, 15 Dec 2020 14:06:36 GMT
-Connection: close
-
-{
-  "data": {
-    "redemptions": [],
-    "_id": "5fd8c2ec15b6c319ece37d17",
-    "member_name": "FABIAN",
-    "valid_until": "2021-01-14T14:06:36.416Z",
-    "qr_code_value": "57e39850-abf1-401a-bbf9-4a6bd684eb4d",
-    "__v": 0,
-    "is_valid": true,
-    "number_of_redemptions_today": 0,
-    "minutes_since_last_redemption": null,
-    "can_redeem": true,
-    "qr_code_url": "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=57e39850-abf1-401a-bbf9-4a6bd684eb4d",
-    "id": "5fd8c2ec15b6c319ece37d17"
-  }
-}
-
-#GABY
-
-HTTP/1.1 200 OK
-X-Powered-By: Express
-Content-Type: application/json; charset=utf-8
-Content-Length: 435
-ETag: W/"1b3-m393wmblNFA4qzw1wS67UeSiG8Y"
-Date: Tue, 15 Dec 2020 14:09:08 GMT
-Connection: close
-
-{
-  "data": {
-    "redemptions": [],
-    "_id": "5fd8c3846df8bd1a1f2aac0b",
-    "member_name": "GABY",
-    "valid_until": "2021-01-14T14:09:08.105Z",
-    "qr_code_value": "5737620d-cd67-48d3-93de-c64ecb10a7e0",
-    "__v": 0,
-    "is_valid": true,
-    "number_of_redemptions_today": 0,
-    "minutes_since_last_redemption": null,
-    "can_redeem": true,
-    "qr_code_url": "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=5737620d-cd67-48d3-93de-c64ecb10a7e0",
-    "id": "5fd8c3846df8bd1a1f2aac0b"
+    "qr_code_url": "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=682ca052-4876-4841-8587-77d80cb9667d",
+    "id": "5fda52f6e2228a8800f3119f"
   }
 }
 
 
-### CREATE AN ORDER FOR A DRINK
+
+
+### (2.1) Create a Drink Order ###################################################
 POST http://localhost:3005/orders
 Content-Type: application/json
 
@@ -104,111 +44,63 @@ Content-Type: application/json
     "drink" : "CAFE MOCCA"
 }
 
-###
-### CREATE AN ORDER FOR A DRINK
-POST http://localhost:3005/orders
-Content-Type: application/json
 
-{
-  
-}
-
-###
+### Response:
 
 HTTP/1.1 200 OK
 X-Powered-By: Express
 Content-Type: application/json; charset=utf-8
-Content-Length: 175
-ETag: W/"af-BcCjmlEo5BputT/cIOynW2cgj6c"
-Date: Tue, 15 Dec 2020 13:50:35 GMT
+Content-Length: 165
+ETag: W/"a5-RnXGePKP0wYJdfTQgGlH5fQIh1U"
+Date: Wed, 16 Dec 2020 18:34:51 GMT
 Connection: close
 
 {
   "data": {
-    "_id": "5fd8bf2ba1df8118b5e6d667",
+    "_id": "5fda534be2228a8800f311a0",
     "drink": "CAFE MOCCA",
-    "createdTime": "2020-12-15T13:50:35.236Z",
+    "createdTime": "2020-12-16T18:34:51.869Z",
     "__v": 0,
     "is_redeemed": false,
-    "id": "5fd8bf2ba1df8118b5e6d667"
+    "id": "5fda534be2228a8800f311a0"
   }
 }
 
-HTTP/1.1 200 OK
-X-Powered-By: Express
-Content-Type: application/json; charset=utf-8
-Content-Length: 179
-ETag: W/"b3-aN39cV3XeZLneLglbiQZkOKAYO4"
-Date: Tue, 15 Dec 2020 13:58:16 GMT
-Connection: close
+### (2.2) Redeem a Drink (order) ###################################################
 
-{
-  "data": {
-    "_id": "5fd8c0f8a3d17e192e382b97",
-    "drink": "CAFE MOCCA for Elias (2)",
-    "createdTime": "2020-12-15T13:58:16.247Z",
-    "__v": 0,
-    "is_redeemed": false,
-    "id": "5fd8c0f8a3d17e192e382b97"
-  }
-}
-
-HTTP/1.1 200 OK
-X-Powered-By: Express
-Content-Type: application/json; charset=utf-8
-Content-Length: 174
-ETag: W/"ae-dz4Oryg65+Xkk5GIekp/8fkaQ7M"
-Date: Tue, 15 Dec 2020 14:09:35 GMT
-Connection: close
-
-{
-  "data": {
-    "_id": "5fd8c39f6df8bd1a1f2aac0c",
-    "drink": "CAFE MOCCA for GABY",
-    "createdTime": "2020-12-15T14:09:35.546Z",
-    "__v": 0,
-    "is_redeemed": false,
-    "id": "5fd8c39f6df8bd1a1f2aac0c"
-  }
-}
-
-### REDEEM COFFEE ORDER USING A VALID MEMBERSHIP
-GET http://localhost:3005/orders/5fd8c426d38a751a445f4865/redemption/5737620d-cd67-48d3-93de-c64ecb10a7e0
-
-### REDEEM COFFEE ORDER USING A VALID MEMBERSHIP
-POST http://localhost:3005/orders/5fd8c426d38a751a445f4865/redemption/
+POST http://localhost:3005/orders/5fda534be2228a8800f311a0/redemption/
 Content-Type: application/json
 
 {
-  "membership_qr_code" : "J"
+  "membership_qr_code" : "682ca052-4876-4841-8587-77d80cb9667d"
 }
 
-### SUCCESS
+### OK Response:
 HTTP/1.1 200 OK
 X-Powered-By: Express
 Content-Type: application/json; charset=utf-8
-Content-Length: 432
-ETag: W/"1b0-N6o+oputa/tu+le2iNfRiS8RGzs"
-Date: Tue, 15 Dec 2020 13:56:50 GMT
+Content-Length: 422
+ETag: W/"1a6-D6YCdQfuUIihYjHrxnA6bhZZ7+Y"
+Date: Wed, 16 Dec 2020 18:37:30 GMT
 Connection: close
 
 {
   "message": "Order successfully redeemed",
   "order": {
-    "_id": "5fd8bf2ba1df8118b5e6d667",
-    "drink": "CAFE MOCCA for Elias",
-    "createdTime": "2020-12-15T13:50:35.236Z",
+    "_id": "5fda534be2228a8800f311a0",
+    "drink": "CAFE MOCCA",
+    "createdTime": "2020-12-16T18:34:51.869Z",
     "__v": 0,
     "redemption": {
-      "_id": "5fd8c0a2a3d17e192e382b95",
-      "time": "2020-12-15T13:56:50.918Z",
-      "order_id": "5fd8bf2ba1df8118b5e6d667",
+      "_id": "5fda53eae2228a8800f311a1",
+      "order_id": "5fda534be2228a8800f311a0",
+      "time": "2020-12-16T18:37:30.628Z",
       "__v": 0
     },
-    "redeemed_by_member_name": "ELIAS",
-    "redeemed_by_membership_id": "5fd8bf08a1df8118b5e6d666",
+    "redeemed_by_member_name": "Harry",
+    "redeemed_by_membership_id": "5fda52f6e2228a8800f3119f",
     "is_redeemed": true,
-    "id": "5fd8bf2ba1df8118b5e6d667"
+    "id": "5fda534be2228a8800f311a0"
   }
 }
 
