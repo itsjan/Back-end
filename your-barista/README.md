@@ -1,9 +1,8 @@
 # YOUR-BARISTA
 
-
 ## Project Background and Inspiration
 
-This is a Backend-server API project for a Coffee Shop wishing to offer a subscription service offering all hot drinks (coffee, tea, hot chocolate) for a fixed monthly fee.
+This is a Backend-server API project for a Coffee Shop wishing to provide a subscription service for all hot drinks (coffee, tea, hot chocolate) for a fixed monthly fee.
 
 This inspiration to this project came from PRET and their [YourPret Barista](https://www.pret.co.uk/en-GB/your-pret) Coffe Subscription Service.
 
@@ -29,9 +28,13 @@ You can use up to *5 times a day* (with *one redemption every 30 minutes*).
 
 ## The API
 
-### Register a new Membership
+----
 
- _Returns details of a new monthly membership, including a link to download a QR code_
+### **Register a new Membership**
+
+----
+
+Returns details of a new monthly membership, including a link to download a QR code
 
 * **URL**
 
@@ -42,40 +45,58 @@ You can use up to *5 times a day* (with *one redemption every 30 minutes*).
 
   `POST`
 
-*  **URL Params**
+* **URL Params**
 
-None
-
+  None
 
 * **Data Params**
 
    **Required:**
  
-   `member_name=[integer]`
+   `member_name=(String)` Member's initials, or nickname. *Do not* include real or full name.
 
 
 * **Success Response:**
   
-  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12 }`
+    **Content:**  
+
+```json
+{
+  "data": {
+    "redemptions": [],
+    "_id": "5fd8bf08a1df8118b5e6d666",
+    "member_name": "GABY",
+    "valid_until": "2021-01-14T13:50:00.995Z",
+    "qr_code_value": "e177ad5d-978f-40e3-b99f-87bac5b1449b",
+    "__v": 0,
+    "is_valid": true,
+    "number_of_redemptions_today": 0,
+    "minutes_since_last_redemption": null,
+    "can_redeem": true,
+    "qr_code_url": "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=e177ad5d-978f-40e3-b99f-87bac5b1449b",
+    "id": "5fd8bf08a1df8118b5e6d666"
+  }
+}
+```
  
 * **Error Response:**
 
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "Log in" }`
-
-  OR
-
-  * **Code:** 422 UNPROCESSABLE ENTRY <br />
-    **Content:** `{ error : "Email Invalid" }`
+  * **Code:** 500 Internal Server Error <br />
+    **Content:** 
+```json
+{
+  "errors": {
+    "message": "Membership validation failed: member_name: Path `member_name` is required."
+  }
+}
+```
 
 * **Sample Call:**
 
-```term
+```bash
 curl --request POST \
   --url http://localhost:3005/memberships \
   --header 'content-type: application/json' \
@@ -85,4 +106,78 @@ curl --request POST \
 
 * **Notes:**
 
-  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._> 
+The backend server will only handle the registration of the subscription (memberhip). Client application will implement the delivery of the QR code to the customer (member) using an SMS / eMail / mobile wallet etc. Therefore, the backend **does/must not** contain any PII (Personal Identifiable Information) according to the EU GDPR data processing requirements.
+
+----
+
+### **Create a Drink Order**
+
+----
+
+Registers a drink order. Returns an order id. The order can be redeemed by a subscription member by showing the QR code to a scanner at the till point.
+
+* **URL**
+
+  /orders
+
+* **Method:**
+  
+   `POST`
+  
+*  **URL Params**
+
+   None
+
+* **Data Params**
+
+    **Required:**
+ 
+   `drink=(String)`
+
+   **Optional:**
+ 
+   None
+
+* **Success Response:**
+  
+  * **Code:** 200 <br />
+    **Content:**
+```json
+{
+  "data": {
+    "_id": "5fd8bf2ba1df8118b5e6d667",
+    "drink": "CAFE MOCCA",
+    "createdTime": "2020-12-15T13:50:35.236Z",
+    "__v": 0,
+    "is_redeemed": false,
+    "id": "5fd8bf2ba1df8118b5e6d667"
+  }
+}
+```
+ 
+* **Error Response:**
+
+  * **Code:** 500 <br />
+    **Content:** 
+```json 
+{
+  "errors": {
+    "message": "Order validation failed: drink: Path `drink` is required."
+  }
+}
+```
+
+
+* **Sample Call:**
+```bash
+curl --request POST \
+  --url http://localhost:3005/orders \
+  --header 'content-type: application/json' \
+  --header 'user-agent: vscode-restclient' \
+  --data '{"drink" : "CAFE MOCCA"}'
+```
+
+
+* **Notes:**
+
+  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._>
