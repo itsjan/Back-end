@@ -3,6 +3,7 @@ POST http://localhost:3005/memberships
 Content-Type: application/json
 
 {
-    "member_name" : "CHARLIE"
+    "member_name" : "CHARLIE 3"
 }
 ###
+GET http://localhost:3005/memberships/5fd0f15ef455bc4b0809b0e0
