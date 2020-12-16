@@ -218,7 +218,7 @@ curl --request POST \
 ### **(2.2) Redeem a Drink (order)**
 
 ----
-Register an order redemption. This checks that the membership is valid and the time related limite (max 5 times per day, one drink every 30 minutes).
+Register an order redemption. This checks that the membership is valid and the time related limits (max 5 times per day, one drink every 30 minutes) are appreciated.
 
 * **URL**
 

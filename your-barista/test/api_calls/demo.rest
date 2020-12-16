@@ -1,15 +1,22 @@
 ### REQUEST A NEW MEMBERSHIP
 ### 
-###
+POST http://localhost:3005/memberships
+Content-Type: application/json
+
+{
+    "member_name" : "GABY"
+}
+
 ###
 POST http://localhost:3005/memberships
 Content-Type: application/json
 
 {
-    "member_name" : "ELIAS"
+    "member_name" : ""
 }
 
 ###
+
 HTTP/1.1 200 OK
 X-Powered-By: Express
 Content-Type: application/json; charset=utf-8
@@ -22,7 +29,7 @@ Connection: close
   "data": {
     "redemptions": [],
     "_id": "5fd8bf08a1df8118b5e6d666",
-    "member_name": "ELIAS",
+    "member_name": "GABY",
     "valid_until": "2021-01-14T13:50:00.995Z",
     "qr_code_value": "e177ad5d-978f-40e3-b99f-87bac5b1449b",
     "__v": 0,
@@ -35,13 +42,75 @@ Connection: close
   }
 }
 
+### Fabian
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 437
+ETag: W/"1b5-nBYqpZIya8Q8x4kkNbbTXqVDNCE"
+Date: Tue, 15 Dec 2020 14:06:36 GMT
+Connection: close
+
+{
+  "data": {
+    "redemptions": [],
+    "_id": "5fd8c2ec15b6c319ece37d17",
+    "member_name": "FABIAN",
+    "valid_until": "2021-01-14T14:06:36.416Z",
+    "qr_code_value": "57e39850-abf1-401a-bbf9-4a6bd684eb4d",
+    "__v": 0,
+    "is_valid": true,
+    "number_of_redemptions_today": 0,
+    "minutes_since_last_redemption": null,
+    "can_redeem": true,
+    "qr_code_url": "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=57e39850-abf1-401a-bbf9-4a6bd684eb4d",
+    "id": "5fd8c2ec15b6c319ece37d17"
+  }
+}
+
+#GABY
+
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 435
+ETag: W/"1b3-m393wmblNFA4qzw1wS67UeSiG8Y"
+Date: Tue, 15 Dec 2020 14:09:08 GMT
+Connection: close
+
+{
+  "data": {
+    "redemptions": [],
+    "_id": "5fd8c3846df8bd1a1f2aac0b",
+    "member_name": "GABY",
+    "valid_until": "2021-01-14T14:09:08.105Z",
+    "qr_code_value": "5737620d-cd67-48d3-93de-c64ecb10a7e0",
+    "__v": 0,
+    "is_valid": true,
+    "number_of_redemptions_today": 0,
+    "minutes_since_last_redemption": null,
+    "can_redeem": true,
+    "qr_code_url": "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=5737620d-cd67-48d3-93de-c64ecb10a7e0",
+    "id": "5fd8c3846df8bd1a1f2aac0b"
+  }
+}
+
 
 ### CREATE AN ORDER FOR A DRINK
 POST http://localhost:3005/orders
 Content-Type: application/json
 
 {
-    "drink" : "CAFE MOCCA for Elias (2)"
+    "drink" : "CAFE MOCCA"
+}
+
+###
+### CREATE AN ORDER FOR A DRINK
+POST http://localhost:3005/orders
+Content-Type: application/json
+
+{
+  
 }
 
 ###
@@ -57,15 +126,13 @@ Connection: close
 {
   "data": {
     "_id": "5fd8bf2ba1df8118b5e6d667",
-    "drink": "More CAFE MOCCA for Elias",
+    "drink": "CAFE MOCCA",
     "createdTime": "2020-12-15T13:50:35.236Z",
     "__v": 0,
     "is_redeemed": false,
     "id": "5fd8bf2ba1df8118b5e6d667"
   }
 }
-
-### Second order...
 
 HTTP/1.1 200 OK
 X-Powered-By: Express
@@ -86,8 +153,35 @@ Connection: close
   }
 }
 
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 174
+ETag: W/"ae-dz4Oryg65+Xkk5GIekp/8fkaQ7M"
+Date: Tue, 15 Dec 2020 14:09:35 GMT
+Connection: close
+
+{
+  "data": {
+    "_id": "5fd8c39f6df8bd1a1f2aac0c",
+    "drink": "CAFE MOCCA for GABY",
+    "createdTime": "2020-12-15T14:09:35.546Z",
+    "__v": 0,
+    "is_redeemed": false,
+    "id": "5fd8c39f6df8bd1a1f2aac0c"
+  }
+}
+
 ### REDEEM COFFEE ORDER USING A VALID MEMBERSHIP
-GET http://localhost:3005/orders/5fd8c0f8a3d17e192e382b97/redemption/e177ad5d-978f-40e3-b99f-87bac5b1449b
+GET http://localhost:3005/orders/5fd8c426d38a751a445f4865/redemption/5737620d-cd67-48d3-93de-c64ecb10a7e0
+
+### REDEEM COFFEE ORDER USING A VALID MEMBERSHIP
+POST http://localhost:3005/orders/5fd8c426d38a751a445f4865/redemption/
+Content-Type: application/json
+
+{
+  "membership_qr_code" : "J"
+}
 
 ### SUCCESS
 HTTP/1.1 200 OK

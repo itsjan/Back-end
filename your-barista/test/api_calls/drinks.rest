@@ -1,6 +1,0 @@
-### Get all products
-http://localhost:3005/drinks
-###
-http://localhost:3005/drinks?category=Organic Tea
-### Get a single product by id
-http://localhost:3005/drinks/5fce57fcc6d083ebeb68ab46
