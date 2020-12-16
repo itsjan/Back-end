@@ -1,4 +1,16 @@
 # YOUR-BARISTA
+- [YOUR-BARISTA](#your-barista)
+  - [Project Background and Inspiration](#project-background-and-inspiration)
+    - [The Business Process](#the-business-process)
+    - [Business Rules](#business-rules)
+  - [Installing from Source and Running the Project Locally.](#installing-from-source-and-running-the-project-locally)
+- [The Back-End Process](#the-back-end-process)
+- [The Membership API](#the-membership-api)
+    - [**(1) Register a new Membership**](#1-register-a-new-membership)
+- [The Orders API](#the-orders-api)
+    - [**(2.1) Create a Drink Order**](#21-create-a-drink-order)
+    - [**(2.2) Redeem a Drink (order)**](#22-redeem-a-drink-order)
+- [Additional API endpoints](#additional-api-endpoints)
 
 ## Project Background and Inspiration
 
@@ -18,14 +30,14 @@ This is how the service works:
 
 ### Business Rules
 
-You can use up to *5 times a day* (with *one redemption every 30 minutes*).
+Member can use the QR code up to *5 times a day* and only *once every 30 mins*. 
 
 ## Installing from Source and Running the Project Locally.
 
 This assumes that MongoDB is installed and running locally as a service. Also, node and npm need to be installed.
 
 1. Clone this repo
-2. `npm i` - install dependencies
+2. `npm i` - Install dependencies
 3. `npm run dev` - Run a development instance.
 
 
@@ -36,9 +48,9 @@ This assumes that MongoDB is installed and running locally as a service. Also, n
 The following section will document the sequence of API calls to the back-end server required in order to:
 
 
-1. **Register a new membership**. Membership contains information about the expriry date and time, which is calculated as 30 days from the time of activation. Membership also contains the qr_code value used to redeem drinks.
+1. **Register a new membership**. Membership contains information about the expriry date and time, which is calculated as 30 days from the time of activation. Membership also contains the qr_code value used to redeem drinks. Membership also contains information on all the redemptions and makes it possible to check that the redemption rules are followed.
 
-2. Repeats every time the customer places an order, and redeems it with the membership:
+2. _Repeats every time the customer places an order, and redeems it with the membership:_
    1.  **Register a drink order**. An orders is sent to the back-end server when the customer holding a membership wants to acquire a free drink. 
    2.   **Redeem the drink** Once the customer's QR code is scanned, it is sent to the server together with the order_id to check the the membership is valid. 
 
@@ -322,7 +334,9 @@ curl --request POST \
 * **Notes:**
 
 ---
+
 # Additional API endpoints
+
 ---
 
 |  URL | Method   | URL parameters
