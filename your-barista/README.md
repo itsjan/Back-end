@@ -20,19 +20,37 @@ This is how the service works:
 
 You can use up to *5 times a day* (with *one redemption every 30 minutes*).
 
-## Installing from Source and Running the Project
+## Installing from Source and Running the Project Locally.
+
+This assumes that MongoDB is installed and running locally as a service. Also, node and npm need to be installed.
 
 1. Clone this repo
 2. `npm i` - install dependencies
 3. `npm run dev` - Run a development instance.
 
-## The API
 
-----
+---
 
-### **Register a new Membership**
+# The Back-End Process
 
-----
+The following section will document the sequence of API calls to the back-end server required in order to:
+
+
+1. **Register a new membership**. Membership contains information about the expriry date and time, which is calculated as 30 days from the time of activation. Membership also contains the qr_code value used to redeem drinks.
+
+2. Repeats every time the customer places an order, and redeems it with the membership:
+   1.  **Register a drink order**. An orders is sent to the back-end server when the customer holding a membership wants to acquire a free drink. 
+   2.   **Redeem the drink** Once the customer's QR code is scanned, it is sent to the server together with the order_id to check the the membership is valid. 
+
+---
+
+# The Membership API
+
+---
+
+### **(1) Register a new Membership**
+
+---
 
 Returns details of a new monthly membership, including a link to download a QR code
 
@@ -109,12 +127,12 @@ The backend server will only handle the registration of the subscription (member
 
 ----
 
-# ORDERS
+# The Orders API
 
 
 ----
 
-### **Create a Drink Order**
+### **(2.1) Create a Drink Order**
 
 ----
 
@@ -185,10 +203,10 @@ curl --request POST \
 
 ---
 
-### **Redeem Order**
+### **(2.2) Redeem a Drink (order)**
 
 ----
-Register an order redemption. This checks that the membership is valid and the time related limites (max 5 times per day, one drink every 30 minutes).
+Register an order redemption. This checks that the membership is valid and the time related limite (max 5 times per day, one drink every 30 minutes).
 
 * **URL**
 
@@ -196,14 +214,11 @@ Register an order redemption. This checks that the membership is valid and the t
 
 * **Method:**
   
-  <_The request type_>
-
   `POST`
   
 *  **URL Params**
 
-   <_If URL params exist, specify them in accordance with name mentioned in URL section. Separate into optional and required. Document data constraints._> 
-
+ 
    **Required:**
  
    `order_id=(String)`
@@ -227,11 +242,30 @@ Register an order redemption. This checks that the membership is valid and the t
 
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12 }`
- 
-* **Error Response:**
+    **Content:**
 
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
+```json
+  {
+  "message": "Order successfully redeemed",
+  "order": {
+    "_id": "5fd8bf2ba1df8118b5e6d667",
+    "drink": "CAFE MOCCA for Elias",
+    "createdTime": "2020-12-15T13:50:35.236Z",
+    "__v": 0,
+    "redemption": {
+      "_id": "5fd8c0a2a3d17e192e382b95",
+      "time": "2020-12-15T13:56:50.918Z",
+      "order_id": "5fd8bf2ba1df8118b5e6d667",
+      "__v": 0
+    },
+    "redeemed_by_member_name": "ELIAS",
+    "redeemed_by_membership_id": "5fd8bf08a1df8118b5e6d666",
+    "is_redeemed": true,
+    "id": "5fd8bf2ba1df8118b5e6d667"
+  }
+```
+
+* **Error Response:**
 
   * **Code:** 400 BAD REQUEST <br />
     **Content:** `{
@@ -287,4 +321,12 @@ curl --request POST \
 
 * **Notes:**
 
-  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._>
+---
+# Additional API endpoints
+---
+
+|  URL | Method   | URL parameters
+|---|---| --- |
+|  /memberships/:id | GET   | ID = (String) |
+|  /orders/:id | GET   | ID = (String) |
+
