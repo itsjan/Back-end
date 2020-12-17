@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Starting the MongoDB Crash Course &middot; Learning Diary</title>
+
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		<link rel="stylesheet" href="/css/custom.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Learning Diary" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Learning Diary</h2>
+				</a>
+				<ul>
+    
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Jan Kaiponen
+        <br>
+        <span>on&nbsp;</span><time datetime="2020-11-24 11:38:04 &#43;0200 EET">November 24, 2020</time>
+</div>
+
+		<h1 class="post-title">Starting the MongoDB Crash Course</h1>
+<div class="post-line"></div>
+
+		
+
+		<p>I started to watch the crash course video.</p>
+<p>Downloaded MongoDB server files into my coursework directory.</p>
+<p>I wanted to see if I can start the server and conntect using the CLI just by using the README and help.</p>
+<p>I created a local data/db directory.</p>
+<pre><code>sudo mkdir -p ../data/db
+
+sudo chmod -R go+w ../data/db
+
+./mongod --dbpath &quot;../data/db&quot;
+
+</code></pre><p>Server started. I opened another terminal window, and started the CLI (shell) in the bin directory:</p>
+<pre><code>./mongo
+</code></pre><p>Got some warnings in the shell.</p>
+<ul>
+<li>Access control not enabled for the database. R/W access to data and configuration is unrestricted</li>
+<li>The server is bound to localhost. Remote systems will be unable to connect to this server.</li>
+</ul>
+<p>Nothing to be worried about at this time.</p>
+<hr>
+<p>OK - Easier to install using brew. I&rsquo;m just gonna delete what I downloaded previously.</p>
+<p><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#install-mongodb-community-edition">Install on macOS</a></p>
+<p><a href="https://github.com/mongodb/homebrew-brew">Github: mongodb/homebrew-brew </a></p>
+<pre><code>brew tap mongodb/brew
+
+brew tap | grep mongodb
+
+brew install mongodb-community@4.4
+</code></pre><h2 id="starting--stopping-the-service">Starting / Stopping the Service</h2>
+<p>To run MongoDB (i.e. the mongod process) as a macOS service, issue the following:</p>
+<pre><code>brew services start mongodb-community@4.4
+</code></pre><p>To stop a mongod running as a macOS service, use the following command as needed:</p>
+<p><code>brew services stop mongodb-community@4.4</code></p>
+<p>To run MongoDB (i.e. the mongod process) manually as a background process, issue the following:</p>
+<p><code>mongod --config /usr/local/etc/mongod.conf --fork</code></p>
+<p>To stop a mongod running as a background process, connect to the mongod from the mongo shell, and issue the shutdown command as needed.</p>
+<hr>
+<p>I am gettin errors from brew saying my macOs version &ldquo;mountain_lion&rdquo; is not supported. I&rsquo;m running the latest version .. will have to google the problem.</p>
+<hr>
+<p>I am following along the video</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">&gt;</span> <span style="color:#960050;background-color:#1e0010">show</span> <span style="color:#960050;background-color:#1e0010">dbs</span>
+<span style="color:#960050;background-color:#1e0010">admin</span>   <span style="color:#ae81ff">0.000</span><span style="color:#960050;background-color:#1e0010">GB</span>
+<span style="color:#960050;background-color:#1e0010">config</span>  <span style="color:#ae81ff">0.000</span><span style="color:#960050;background-color:#1e0010">GB</span>
+<span style="color:#960050;background-color:#1e0010">local</span>   <span style="color:#ae81ff">0.000</span><span style="color:#960050;background-color:#1e0010">GB</span>
+<span style="color:#960050;background-color:#1e0010">test</span>    <span style="color:#ae81ff">0.000</span><span style="color:#960050;background-color:#1e0010">GB</span>
+<span style="color:#960050;background-color:#1e0010">&gt;</span> <span style="color:#960050;background-color:#1e0010">use</span> <span style="color:#960050;background-color:#1e0010">test</span>
+<span style="color:#960050;background-color:#1e0010">switched</span> <span style="color:#960050;background-color:#1e0010">to</span> <span style="color:#960050;background-color:#1e0010">db</span> <span style="color:#960050;background-color:#1e0010">test</span>
+<span style="color:#960050;background-color:#1e0010">&gt;</span> <span style="color:#960050;background-color:#1e0010">show</span> <span style="color:#960050;background-color:#1e0010">collections</span>
+<span style="color:#960050;background-color:#1e0010">products</span>
+<span style="color:#960050;background-color:#1e0010">&gt;</span> <span style="color:#960050;background-color:#1e0010">db.drop</span>
+<span style="color:#960050;background-color:#1e0010">db.dropAllRoles(</span>  <span style="color:#960050;background-color:#1e0010">db.dropAllUsers(</span>  <span style="color:#960050;background-color:#1e0010">db.dropDatabase(</span>  <span style="color:#960050;background-color:#1e0010">db.dropRole(</span>      <span style="color:#960050;background-color:#1e0010">db.dropUser(</span>
+<span style="color:#960050;background-color:#1e0010">&gt;</span> <span style="color:#960050;background-color:#1e0010">db.dropDatabase()</span>
+{ <span style="color:#f92672">&#34;dropped&#34;</span> : <span style="color:#e6db74">&#34;test&#34;</span>, <span style="color:#f92672">&#34;ok&#34;</span> : <span style="color:#ae81ff">1</span> }
+<span style="color:#960050;background-color:#1e0010">&gt;</span> <span style="color:#960050;background-color:#1e0010">show</span> <span style="color:#960050;background-color:#1e0010">dbs</span>
+<span style="color:#960050;background-color:#1e0010">admin</span>   <span style="color:#ae81ff">0.000</span><span style="color:#960050;background-color:#1e0010">GB</span>
+<span style="color:#960050;background-color:#1e0010">config</span>  <span style="color:#ae81ff">0.000</span><span style="color:#960050;background-color:#1e0010">GB</span>
+<span style="color:#960050;background-color:#1e0010">local</span>   <span style="color:#ae81ff">0.000</span><span style="color:#960050;background-color:#1e0010">GB</span>
+<span style="color:#960050;background-color:#1e0010">&gt;</span> <span style="color:#960050;background-color:#1e0010">use</span> <span style="color:#960050;background-color:#1e0010">acme</span>
+<span style="color:#960050;background-color:#1e0010">switched</span> <span style="color:#960050;background-color:#1e0010">to</span> <span style="color:#960050;background-color:#1e0010">db</span> <span style="color:#960050;background-color:#1e0010">acme</span>
+<span style="color:#960050;background-color:#1e0010">&gt;</span> <span style="color:#960050;background-color:#1e0010">db</span>
+<span style="color:#960050;background-color:#1e0010">acme</span>
+<span style="color:#960050;background-color:#1e0010">&gt;</span> <span style="color:#960050;background-color:#1e0010">db.createCollection(&#39;posts&#39;)</span>
+{ <span style="color:#f92672">&#34;ok&#34;</span> : <span style="color:#ae81ff">1</span> }
+<span style="color:#960050;background-color:#1e0010">&gt;</span> <span style="color:#960050;background-color:#1e0010">show</span> <span style="color:#960050;background-color:#1e0010">collections</span>
+<span style="color:#960050;background-color:#1e0010">posts</span>
+<span style="color:#960050;background-color:#1e0010">&gt;</span> 
+</code></pre></div>
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/post/4/" class="left arrow">&#8592;</a>
+		<a href="/post/6/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			
+			<span>
+			&copy; <time datetime="2020-12-17 13:31:10.230629 &#43;0200 EET m=&#43;0.066571333">2020</time> Jan Kaiponen. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

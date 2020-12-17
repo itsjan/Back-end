@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>New Project, Callback Hell &middot; Learning Diary</title>
+
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		<link rel="stylesheet" href="/css/custom.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Learning Diary" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Learning Diary</h2>
+				</a>
+				<ul>
+    
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Jan Kaiponen
+        <br>
+        <span>on&nbsp;</span><time datetime="2020-12-15 14:48:00 &#43;0200 EET">December 15, 2020</time>
+</div>
+
+		<h1 class="post-title">New Project, Callback Hell</h1>
+<div class="post-line"></div>
+
+		
+
+		<p>I have been working a couple of days on my new project, which is to solve a realistic business problem.</p>
+<p>This is a server app/API for a Coffee Shop, which sells monthly coffee memberships.</p>
+<p>For a single montly payment, the customer gets free coffee up to the following limits:</p>
+<ul>
+<li>Max 5 drinks per day</li>
+<li>One redemption in any 30 minutes.</li>
+</ul>
+<p>Given this is a very simple problem to solve; I have already ran into issues with complexity called <a href="https://en.wiktionary.org/wiki/callback_hell">callback-hell</a>.</p>
+<h2 id="promises">Promises</h2>
+<p>I learned about how promises work, as I knew this can make the source code more easy to read and maintain.</p>
+<p>The prescribed course tutorials use callbacks entirely. I realised that I will have to restructure my code to use Promises to keep it more maintainable.</p>
+<h2 id="mongoose-models">Mongoose Models</h2>
+<p>In order to keep my code clean, I needed to implement many virtual fields to my Mongoose models. I also learned how these are (and are not) populated when Mongoose returns queried data.</p>
+<h2 id="making-my-project-more-simple">Making my project more simple</h2>
+<p>I have rescoped and redefined the <a href="https://en.wiktionary.org/wiki/product#English">MVP</a> several times during this project to keep to my budget and schedule. However, I do want to keep and implement the business rules (requirements) that I set for myself and the final project.</p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/post/11/" class="left arrow">&#8592;</a>
+		<a href="/post/13/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			
+			<span>
+			&copy; <time datetime="2020-12-17 13:31:10.221883 &#43;0200 EET m=&#43;0.057824687">2020</time> Jan Kaiponen. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

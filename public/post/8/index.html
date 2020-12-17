@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Express JS Crash Course &middot; Learning Diary</title>
+
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		<link rel="stylesheet" href="/css/custom.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Learning Diary" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Learning Diary</h2>
+				</a>
+				<ul>
+    
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Jan Kaiponen
+        <br>
+        <span>on&nbsp;</span><time datetime="2020-11-30 17:04:08 &#43;0200 EET">November 30, 2020</time>
+</div>
+
+		<h1 class="post-title">Express JS Crash Course</h1>
+<div class="post-line"></div>
+
+		
+
+		<p>Started to watch the video again.
+This time working through the examples.</p>
+<h2 id="basic-server-syntax">Basic Server Syntax</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express);
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">// init express
+</span><span style="color:#e6db74">const app = express();
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">// create your endpoints / route handlers
+</span><span style="color:#e6db74">app.get(&#39;</span><span style="color:#f92672">/</span><span style="color:#e6db74">&#39;, function (req, res) {
+</span><span style="color:#e6db74">    // fetch from database...
+</span><span style="color:#e6db74">    // load pages ...
+</span><span style="color:#e6db74">    // return JSON ...
+</span><span style="color:#e6db74">    // full access to request &amp; response
+</span><span style="color:#e6db74">    res.send(&#39;</span><span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">World</span><span style="color:#f92672">!</span><span style="color:#960050;background-color:#1e0010">&#39;</span>);
+});
+
+<span style="color:#75715e">// listen on a port
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">5000</span>);
+</code></pre></div><h3 id="handling-requests">Handling requests</h3>
+<ul>
+<li>app.get()</li>
+<li>app.post()</li>
+<li>app.put()</li>
+<li>app.delete()</li>
+</ul>
+<p>Access to params, query strings, url parts, etc</p>
+<p>Express has a router; we can store routes in separate files and export</p>
+<p>Can parse incoming data with the body parser</p>
+<h3 id="middleware">Middleware</h3>
+<p>Functions that have access to the request and response object.</p>
+<p>&ldquo;A stack of functions that executes when a request is made to the server&rdquo;</p>
+<ul>
+<li>Execute any code</li>
+<li>Make changes to the request/response objects</li>
+<li>End response cycle</li>
+<li>Call next middleware in the stack</li>
+</ul>
+<h3 id="creating-a-new-app">Creating a new app</h3>
+<p>npm init -y</p>
+<p>npm i express</p>
+<h4 id="main-entry-point-to-the-app">Main entry point to the app</h4>
+<p>index.js</p>
+<h4 id="dotenv">dotenv</h4>
+<ul>
+<li>Use dotenv for configuration management (REST api tutorial)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>)
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>();
+<span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;dotenv&#39;</span>).<span style="color:#a6e22e">config</span>()
+</code></pre></div><p>.env
+<code>KEY=VALUE</code></p>
+<h4 id="nodemon">nodemon</h4>
+<p>This will watch source files and restart the server when needed.</p>
+<p><code>npm i --save-dev nodemon</code></p>
+<p>package.json</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">  <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+    <span style="color:#f92672">&#34;devStart&#34;</span>: <span style="color:#e6db74">&#34;nodemon server.js&#34;</span>
+  }<span style="color:#960050;background-color:#1e0010">,</span>
+</code></pre></div><p>npm run devStart</p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/post/7/" class="left arrow">&#8592;</a>
+		<a href="/post/9/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			
+			<span>
+			&copy; <time datetime="2020-12-17 13:31:10.306584 &#43;0200 EET m=&#43;0.142529855">2020</time> Jan Kaiponen. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

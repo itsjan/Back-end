@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Express JS Crash Course ... continued &middot; Learning Diary</title>
+
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		<link rel="stylesheet" href="/css/custom.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Learning Diary" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Learning Diary</h2>
+				</a>
+				<ul>
+    
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Jan Kaiponen
+        <br>
+        <span>on&nbsp;</span><time datetime="2020-12-04 11:53:06 &#43;0200 EET">December 4, 2020</time>
+</div>
+
+		<h1 class="post-title">Express JS Crash Course ... continued</h1>
+<div class="post-line"></div>
+
+		
+
+		<p>I&rsquo;ve started to work on my project and have put some basics in place.</p>
+<p>I have started to build the data model with Mongoose. I&rsquo;ve watched some additional videos, and searched documentation and samples on-line. I will be adding comments to my code to refenrence all the different sources that I have used. It is useful to have these &ldquo;bookmarked&rdquo; within the project for future reference, too.</p>
+<p>I will continue to watch the Crash Course on Express JS.</p>
+<hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">members</span> <span style="color:#f92672">=</span> [
+    { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;John Doe&#39;</span>, <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jd@email.com&#39;</span>, <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;a&#39;</span>},
+    { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;John Doe Sr&#39;</span>, <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jd.sr@email.com&#39;</span>, <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;a&#39;</span>},
+    { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;John Doe Jr&#39;</span>, <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jd.jr@email.com&#39;</span>, <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;a&#39;</span>},
+]
+
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/api/members&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>(<span style="color:#a6e22e">members</span>);
+});
+</code></pre></div><p><code>res.json</code> sends JSON data. The response has ContentType set to <code>application/json</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">HTTP/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">200</span> <span style="color:#960050;background-color:#1e0010">OK</span>
+<span style="color:#960050;background-color:#1e0010">X-Powered-By:</span> <span style="color:#960050;background-color:#1e0010">Express</span>
+<span style="color:#960050;background-color:#1e0010">Content-Type:</span> <span style="color:#960050;background-color:#1e0010">application/json;</span> <span style="color:#960050;background-color:#1e0010">charset=utf</span><span style="color:#ae81ff">-8</span>
+<span style="color:#960050;background-color:#1e0010">Content-Length:</span> <span style="color:#ae81ff">202</span>
+<span style="color:#960050;background-color:#1e0010">ETag:</span> <span style="color:#960050;background-color:#1e0010">W/</span><span style="color:#e6db74">&#34;ca-3G6fuYk8sd6M9idwE8hMwBZh8g4&#34;</span>
+<span style="color:#960050;background-color:#1e0010">Date:</span> <span style="color:#960050;background-color:#1e0010">Fri,</span> <span style="color:#ae81ff">04</span> <span style="color:#960050;background-color:#1e0010">Dec</span> <span style="color:#ae81ff">2020</span> <span style="color:#ae81ff">10</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#ae81ff">27</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#ae81ff">49</span> <span style="color:#960050;background-color:#1e0010">GMT</span>
+<span style="color:#960050;background-color:#1e0010">Connection:</span> <span style="color:#960050;background-color:#1e0010">close</span>
+
+[
+  {
+    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">1</span>,
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;John Doe&#34;</span>,
+    <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;jd@email.com&#34;</span>,
+    <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;a&#34;</span>
+  },
+  {
+    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">2</span>,
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;John Doe Sr&#34;</span>,
+    <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;jd.sr@email.com&#34;</span>,
+    <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;a&#34;</span>
+  },
+  {
+    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">2</span>,
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;John Doe Jr&#34;</span>,
+    <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;jd.jr@email.com&#34;</span>,
+    <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;a&#34;</span>
+  }
+]
+
+</code></pre></div><p>I am using VS Code REST Client (humao.rest-client) instead of Postman. I can store my API call samples together with the project files.</p>
+<p><strong>req</strong></p>
+<p>docs REQ</p>
+<ul>
+<li><a href="https://expressjs.com/en/4x/api.html#req">https://expressjs.com/en/4x/api.html#req</a></li>
+<li><a href="https://nodejs.org/api/http.html#http_class_http_incomingmessage">https://nodejs.org/api/http.html#http_class_http_incomingmessage</a></li>
+</ul>
+<p><strong>req.body</strong></p>
+<p><a href="https://expressjs.com/en/4x/api.html#req">https://expressjs.com/en/4x/api.html#req</a></p>
+<p>By default <code>undefined</code>, populated by using body-parsin middleware such as <code>express.json</code> or <code>express.urlencoded()</code></p>
+<ul>
+<li>docs <a href="https://expressjs.com/en/5x/api.html#express.urlencoded">https://expressjs.com/en/5x/api.html#express.urlencoded</a></li>
+<li><a href="https://expressjs.com/en/5x/api.html#express.json">https://expressjs.com/en/5x/api.html#express.json</a></li>
+</ul>
+<p><strong>moment</strong></p>
+<p><a href="https://momentjs.com/docs/#/-project-status/">Should be replaced with a modern alternative.</a></p>
+<hr>
+<p>I finished building the API functionality.</p>
+<p>Next time, add view engine:</p>
+<p><a href="https://youtu.be/L72fhGm1tfE?t=3485">https://youtu.be/L72fhGm1tfE?t=3485</a></p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/post/8/" class="left arrow">&#8592;</a>
+		<a href="/post/10/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			
+			<span>
+			&copy; <time datetime="2020-12-17 13:31:10.307156 &#43;0200 EET m=&#43;0.143102031">2020</time> Jan Kaiponen. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>First Day - Setting up my environment and watching intro videos on YouTube &middot; Learning Diary</title>
+
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		<link rel="stylesheet" href="/css/custom.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Learning Diary" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Learning Diary</h2>
+				</a>
+				<ul>
+    
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Jan Kaiponen
+        <br>
+        <span>on&nbsp;</span><time datetime="2020-11-12 14:02:10 &#43;0200 EET">November 12, 2020</time>
+</div>
+
+		<h1 class="post-title">First Day - Setting up my environment and watching intro videos on YouTube</h1>
+<div class="post-line"></div>
+
+		
+
+		<p>Today I :</p>
+<ul>
+<li>Set up my environment</li>
+<li>Watched intro videos on APIs and Node.js</li>
+</ul>
+<h2 id="setting-up-my-environement">Setting up my Environement</h2>
+<p>I have set up a local GIT repository for my Back-End course work. I have also decided to use VS Code as my development environment.</p>
+<p>My repository will have separate folders for the course assignments:</p>
+<ul>
+<li><strong>coursework</strong></li>
+<li><strong>diary</strong>: I have set up a <a href="https://gohugo.io/">Hugo</a> blog site to keep my learning diary.</li>
+<li><strong>project</strong></li>
+</ul>
+<p>I will be skipping the Git tutorials as I have some Git experience from another course.</p>
+<p>I have already set up Git on my machine. I made an initial commit to my new Git ropo, and pushed to <a href="https://github.com/itsjan/Back-end.git">GitHub</a>.</p>
+<h2 id="back-end">Back-end</h2>
+<h3 id="rest-intro">REST Intro</h3>
+<p>Watched this <a href="https://www.youtube.com/watch?v=7YcW25PHnAA&amp;ab_channel=WebConcepts">video</a> on YouTube.</p>
+<ul>
+<li>Face book has a REST api. I tried the <a href="https://graph.facebook.com/youtube">sample</a> on the video, but I don&rsquo;t get the same result. Instead, I&rsquo;m getting an error saying <em>An access token is required to request this resource.</em> I have some idea what this means. Would need to make the request with an API client, such as <a href="https://www.postman.com/product/api-client/">Postman</a>? I googled this <a href="https://developers.facebook.com/docs/graph-api/using-graph-api/">document</a> on using the Facebook Graph API; maybe I&rsquo;ll have a loot at it later.</li>
+<li>The google maps api sample doesn&rsquo;t work either, error message saying an API key is required for each request.</li>
+<li>Instagram API example is also outdated. Just realised I am watching a 2014 video.</li>
+<li><a href="https://www.programmableweb.com/">ProgrammableWeb</a> is an API directory.</li>
+<li><strong>OAuth</strong> is used to authenticate to many APIs.</li>
+</ul>
+<h3 id="nodejs-tutorial">NodeJS Tutorial</h3>
+<p>Project home page: <a href="https://nodejs.org/en/">NodeJs.org</a></p>
+<p>This course uses version 12. I believe I have this version already installed on my machine.</p>
+<pre><code>% node --version
+v0.12.7
+</code></pre><p>Tutorial <a href="https://www.youtube.com/watch?v=fBNz5xF-Kx4">video</a>.  <em>OK this is a long one&hellip;</em></p>
+<p>Create an HTTP server from scratch without Express, then deploy to Heroku. Covers modules such as as <a href="https://nodejs.org/docs/latest-v12.x/api/path.html">path</a>, <a href="https://nodejs.org/docs/latest-v12.x/api/url.html">url</a>, <a href="https://nodejs.org/docs/latest-v12.x/api/fs.html">fs</a>, <a href="https://nodejs.org/docs/latest-v12.x/api/events.html">events</a>.</p>
+<p>Node is a JavaScript Runtime.</p>
+<p>Recommended to know first:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"><strong>HTTP</strong></a> (<a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">status codes</a>, <a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields">headers</a>, etc..)</li>
+<li><a href="https://en.wikipedia.org/wiki/JSON"><strong>JSON</strong></a></li>
+<li><a href="https://www.w3schools.com/js/js_arrow_function.asp">Arrow Functions</a></li>
+<li><a href="https://www.w3schools.com/js/js_promise.asp">Promises</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC Pattern</a></li>
+</ul>
+<p>Learned that the best use cases and types of projects for Node are those that are not CPU intensive:</p>
+<ul>
+<li>REST API &amp; Microservices</li>
+<li>Realtime services (Chat, Live Updates)</li>
+<li>CRUD Apps (Blogs, Shopping carts, Social Networks)</li>
+<li>Tools &amp; Utilities</li>
+<li>etc..</li>
+</ul>
+<h3 id="npm---node-package-manager">NPM - Node Package manager</h3>
+<ul>
+<li><strong>npm init</strong> <em>Generates a package.json file</em>
+<ul>
+<li>Lists all dependencies</li>
+<li>Packages are stored in the <strong>node_modules</strong> folder</li>
+</ul>
+</li>
+<li><strong>npm install express</strong> <em>Installs a package locally</em></li>
+<li><strong>npm install -g nodemon</strong> <em>Installs a package globally</em></li>
+</ul>
+<h3 id="the-tutorial-project">The tutorial project</h3>
+<ul>
+<li>Created a new folder <code>coursework/node_crash_course</code></li>
+<li><code>npm init</code></li>
+<li><code>npm install uuid</code></li>
+</ul>
+<p>Npm did not add the package dependencies in the package.json file. I tried with &ndash;save but nothing happens. I decided to update my npm .. but it didn&rsquo;t work without updating node, too. I&rsquo;ll probably have some problems later on as I am not using the recommended version 12. I don&rsquo;t want to spend time on this right now. Watching this video is slow&hellip;</p>
+<h4 id="dev-dependencies">Dev dependencies</h4>
+<p><code>npm install -D nodemon</code></p>
+<p>Created a .gitignore with folder node_modules. No need to check these into VCS. npm install will recreate the directory.</p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/post/2/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			
+			<span>
+			&copy; <time datetime="2020-12-17 13:31:10.222043 &#43;0200 EET m=&#43;0.057984835">2020</time> Jan Kaiponen. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

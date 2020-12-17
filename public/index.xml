@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learning Diary</title>
+    <link>localhost:1313/</link>
+    <description>Recent content on Learning Diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 17 Dec 2020 13:29:35 +0200</lastBuildDate><atom:link href="localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wrapping Things Up</title>
+      <link>localhost:1313/post/13/</link>
+      <pubDate>Thu, 17 Dec 2020 13:29:35 +0200</pubDate>
+      
+      <guid>localhost:1313/post/13/</guid>
+      <description>I am going to submit my work today. Will complete writing the readme file and wire things up.</description>
+    </item>
+    
+    <item>
+      <title>New Project, Callback Hell</title>
+      <link>localhost:1313/post/12/</link>
+      <pubDate>Tue, 15 Dec 2020 14:48:00 +0200</pubDate>
+      
+      <guid>localhost:1313/post/12/</guid>
+      <description>I have been working a couple of days on my new project, which is to solve a realistic business problem.
+This is a server app/API for a Coffee Shop, which sells monthly coffee memberships.
+For a single montly payment, the customer gets free coffee up to the following limits:
+ Max 5 drinks per day One redemption in any 30 minutes.  Given this is a very simple problem to solve; I have already ran into issues with complexity called callback-hell.</description>
+    </item>
+    
+    <item>
+      <title>Project</title>
+      <link>localhost:1313/post/11/</link>
+      <pubDate>Mon, 07 Dec 2020 11:05:00 +0200</pubDate>
+      
+      <guid>localhost:1313/post/11/</guid>
+      <description>I decided to dump my course project. It is archived in the coursework folder.
+My first idea was a microblogging site as this is a common sample across various tutorials. I think I was able to learn the concepts presented in the tutorials in a project context building something bigger. However, I am not keen to complete this project because it is not very exciting and I&amp;rsquo;d like to come up with something more original.</description>
+    </item>
+    
+    <item>
+      <title>Express JS Crash Course ... express-handlebars</title>
+      <link>localhost:1313/post/10/</link>
+      <pubDate>Sat, 05 Dec 2020 09:30:00 +0200</pubDate>
+      
+      <guid>localhost:1313/post/10/</guid>
+      <description>Today I will be finishing the tutorial and will be adding a view engine to the project. This project is using handlebars.
+ https://handlebarsjs.com/ https://www.npmjs.com/package/express-handlebars  We also added Bootstap which is a front-end toolkit.
+ https://getbootstrap.com/   Datatables https://datatables.net/
+I found this useful jQuery plugin which can add sorting and filtering to HTML tables.
+I wanted to test it on my app. I got this to work, but realised that I will need to figure out how to insert page specific scripts within the main template.</description>
+    </item>
+    
+    <item>
+      <title>Express JS Crash Course ... continued</title>
+      <link>localhost:1313/post/9/</link>
+      <pubDate>Fri, 04 Dec 2020 11:53:06 +0200</pubDate>
+      
+      <guid>localhost:1313/post/9/</guid>
+      <description>I&amp;rsquo;ve started to work on my project and have put some basics in place.
+I have started to build the data model with Mongoose. I&amp;rsquo;ve watched some additional videos, and searched documentation and samples on-line. I will be adding comments to my code to refenrence all the different sources that I have used. It is useful to have these &amp;ldquo;bookmarked&amp;rdquo; within the project for future reference, too.
+I will continue to watch the Crash Course on Express JS.</description>
+    </item>
+    
+    <item>
+      <title>Express JS Crash Course</title>
+      <link>localhost:1313/post/8/</link>
+      <pubDate>Mon, 30 Nov 2020 17:04:08 +0200</pubDate>
+      
+      <guid>localhost:1313/post/8/</guid>
+      <description>Started to watch the video again. This time working through the examples.
+Basic Server Syntax const express = require(&amp;#39;express); // init express const app = express(); // create your endpoints / route handlers app.get(&amp;#39;/&amp;#39;, function (req, res) { // fetch from database... // load pages ... // return JSON ... // full access to request &amp;amp; response res.send(&amp;#39;Hello World!&amp;#39;); }); // listen on a port app.listen(5000); Handling requests  app.get() app.</description>
+    </item>
+    
+    <item>
+      <title>REST Tutorial (Mongoose)</title>
+      <link>localhost:1313/post/7/</link>
+      <pubDate>Mon, 30 Nov 2020 12:27:21 +0200</pubDate>
+      
+      <guid>localhost:1313/post/7/</guid>
+      <description>Youtube: Build A REST API With Node.js, Express, &amp;amp; MongoDB - Quick
+Starting the project npm init
+npm i mongoose express
+npm i &amp;ndash;save-dev dotenv nodemon
+{ &amp;#34;name&amp;#34;: &amp;#34;build_a_rest_api_tutorial&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;1.0.0&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;main&amp;#34;: &amp;#34;index.js&amp;#34;, &amp;#34;scripts&amp;#34;: { &amp;#34;devStart&amp;#34;: &amp;#34;nodemon server.js&amp;#34; }, &amp;#34;author&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;license&amp;#34;: &amp;#34;ISC&amp;#34;, &amp;#34;dependencies&amp;#34;: { &amp;#34;express&amp;#34;: &amp;#34;^4.17.1&amp;#34;, &amp;#34;mongoose&amp;#34;: &amp;#34;^5.10.18&amp;#34;, &amp;#34;undefined&amp;#34;: &amp;#34; &amp;#34; }, &amp;#34;devDependencies&amp;#34;: { &amp;#34;dotenv&amp;#34;: &amp;#34;^8.2.0&amp;#34;, &amp;#34;nodemon&amp;#34;: &amp;#34;^2.0.6&amp;#34; } } Create file .env
+.gitignore
+.env node_modules server.js</description>
+    </item>
+    
+    <item>
+      <title>Express Friday</title>
+      <link>localhost:1313/post/6/</link>
+      <pubDate>Fri, 27 Nov 2020 16:11:10 +0200</pubDate>
+      
+      <guid>localhost:1313/post/6/</guid>
+      <description>Ok .. so today I will watch the final YT on Express.
+I&amp;rsquo;m not going to work through the examples today while I&amp;rsquo;m wathcing.</description>
+    </item>
+    
+    <item>
+      <title>Starting the MongoDB Crash Course</title>
+      <link>localhost:1313/post/5/</link>
+      <pubDate>Tue, 24 Nov 2020 11:38:04 +0200</pubDate>
+      
+      <guid>localhost:1313/post/5/</guid>
+      <description>I started to watch the crash course video.
+Downloaded MongoDB server files into my coursework directory.
+I wanted to see if I can start the server and conntect using the CLI just by using the README and help.
+I created a local data/db directory.
+sudo mkdir -p ../data/db sudo chmod -R go+w ../data/db ./mongod --dbpath &amp;quot;../data/db&amp;quot; Server started. I opened another terminal window, and started the CLI (shell) in the bin directory:</description>
+    </item>
+    
+    <item>
+      <title>Completing the node.js Crash Course</title>
+      <link>localhost:1313/post/4/</link>
+      <pubDate>Thu, 19 Nov 2020 15:08:26 +0200</pubDate>
+      
+      <guid>localhost:1313/post/4/</guid>
+      <description>I am finally getting to the end of the node.js Crash Course. It&amp;rsquo;s been very basic so far, and there&amp;rsquo;s not many things to note.
+Deployment to Heroku Check-List  PORT specified as process.env.PORT package.json must specify a start script  &amp;quot;scripts&amp;quot;: { &amp;quot;start&amp;quot;: &amp;quot;node index&amp;quot;, &amp;quot;dev&amp;quot;: &amp;quot;nodemon index&amp;quot; },   Sign up for a Heroku account.
+  Have Heroku CLI installed. On a Mac:
+   % brew tap heroku/brew &amp;amp;&amp;amp; brew install heroku login  % heroku login Create a new heroku app  % heroku create Creating app.</description>
+    </item>
+    
+    <item>
+      <title>3</title>
+      <link>localhost:1313/post/3/</link>
+      <pubDate>Mon, 16 Nov 2020 17:21:47 +0200</pubDate>
+      
+      <guid>localhost:1313/post/3/</guid>
+      <description>I am continuing to watch the Traversy Media Node.js YouTube tutorial. Currently at os module.
+Node.js Events </description>
+    </item>
+    
+    <item>
+      <title>Watching a node.js tutorial on Skillhare</title>
+      <link>localhost:1313/post/2/</link>
+      <pubDate>Fri, 13 Nov 2020 15:06:38 +0200</pubDate>
+      
+      <guid>localhost:1313/post/2/</guid>
+      <description>I&amp;rsquo;m taking a small break from the course materials and watching some node.js tutorials on Skillshare.
+I&amp;rsquo;ve learned about the history of node.js and apparently it was a sort of controversial approach to server-side development at first. JavaScript on the server side? Anyone?
+This tutorial I am watching is building an app without any npm dependencies:
+ building a router building a config system building an API building an HTTP and an HTTP server &amp;hellip;  </description>
+    </item>
+    
+    <item>
+      <title>First Day - Setting up my environment and watching intro videos on YouTube</title>
+      <link>localhost:1313/post/1/</link>
+      <pubDate>Thu, 12 Nov 2020 14:02:10 +0200</pubDate>
+      
+      <guid>localhost:1313/post/1/</guid>
+      <description>Today I :
+ Set up my environment Watched intro videos on APIs and Node.js  Setting up my Environement I have set up a local GIT repository for my Back-End course work. I have also decided to use VS Code as my development environment.
+My repository will have separate folders for the course assignments:
+ coursework diary: I have set up a Hugo blog site to keep my learning diary.</description>
+    </item>
+    
+  </channel>
+</rss>

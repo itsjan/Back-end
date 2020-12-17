@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Express JS Crash Course ... express-handlebars &middot; Learning Diary</title>
+
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		<link rel="stylesheet" href="/css/custom.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Learning Diary" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Learning Diary</h2>
+				</a>
+				<ul>
+    
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Jan Kaiponen
+        <br>
+        <span>on&nbsp;</span><time datetime="2020-12-05 09:30:00 &#43;0200 EET">December 5, 2020</time>
+</div>
+
+		<h1 class="post-title">Express JS Crash Course ... express-handlebars</h1>
+<div class="post-line"></div>
+
+		
+
+		<p>Today I will be finishing the tutorial and will be adding a view engine to the project. This project is using handlebars.</p>
+<ul>
+<li><a href="https://handlebarsjs.com/">https://handlebarsjs.com/</a></li>
+<li><a href="https://www.npmjs.com/package/express-handlebars">https://www.npmjs.com/package/express-handlebars</a></li>
+</ul>
+<p>We also added Bootstap which is a front-end toolkit.</p>
+<ul>
+<li><a href="https://getbootstrap.com/">https://getbootstrap.com/</a></li>
+</ul>
+<p><img src="/img/10_app.png" alt="Members app"></p>
+<hr>
+<h2 id="datatables">Datatables</h2>
+<p><a href="https://datatables.net/">https://datatables.net/</a></p>
+<p><img src="/img/10_datatables.png" alt="Datatable"></p>
+<p>I found this useful jQuery plugin which can add sorting and filtering to HTML tables.</p>
+<p>I wanted to test it on my app. I got this to work, but realised that I will need to figure out how to insert page specific scripts within the main template. We only had {{{ body }}} but I needed to add stuff to the bottom of the page.</p>
+<p>This <a href="https://wolfgang-ziegler.com/blog/a-scripts-section-for-your-handlebars-layout-template">article</a> has the solution to my problem.</p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/post/9/" class="left arrow">&#8592;</a>
+		<a href="/post/11/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			
+			<span>
+			&copy; <time datetime="2020-12-17 13:31:10.221909 &#43;0200 EET m=&#43;0.057851146">2020</time> Jan Kaiponen. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

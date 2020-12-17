@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>REST Tutorial (Mongoose) &middot; Learning Diary</title>
+
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		<link rel="stylesheet" href="/css/custom.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Learning Diary" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Learning Diary</h2>
+				</a>
+				<ul>
+    
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Jan Kaiponen
+        <br>
+        <span>on&nbsp;</span><time datetime="2020-11-30 12:27:21 &#43;0200 EET">November 30, 2020</time>
+</div>
+
+		<h1 class="post-title">REST Tutorial (Mongoose)</h1>
+<div class="post-line"></div>
+
+		
+
+		<p><a href="https://www.youtube.com/watch?v=fgTGADljAeg&amp;ab_channel=WebDevSimplified">Youtube: Build A REST API With Node.js, Express, &amp; MongoDB - Quick</a></p>
+<h2 id="starting-the-project">Starting the project</h2>
+<p>npm init</p>
+<p>npm i mongoose express</p>
+<p>npm i &ndash;save-dev dotenv nodemon</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;build_a_rest_api_tutorial&#34;</span>,
+  <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.0.0&#34;</span>,
+  <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+  <span style="color:#f92672">&#34;main&#34;</span>: <span style="color:#e6db74">&#34;index.js&#34;</span>,
+  <span style="color:#f92672">&#34;scripts&#34;</span>: {
+    <span style="color:#f92672">&#34;devStart&#34;</span>: <span style="color:#e6db74">&#34;nodemon server.js&#34;</span>
+  },
+  <span style="color:#f92672">&#34;author&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+  <span style="color:#f92672">&#34;license&#34;</span>: <span style="color:#e6db74">&#34;ISC&#34;</span>,
+  <span style="color:#f92672">&#34;dependencies&#34;</span>: {
+    <span style="color:#f92672">&#34;express&#34;</span>: <span style="color:#e6db74">&#34;^4.17.1&#34;</span>,
+    <span style="color:#f92672">&#34;mongoose&#34;</span>: <span style="color:#e6db74">&#34;^5.10.18&#34;</span>,
+    <span style="color:#f92672">&#34;undefined&#34;</span>: <span style="color:#e6db74">&#34;                                                                           &#34;</span>
+  },
+  <span style="color:#f92672">&#34;devDependencies&#34;</span>: {
+    <span style="color:#f92672">&#34;dotenv&#34;</span>: <span style="color:#e6db74">&#34;^8.2.0&#34;</span>,
+    <span style="color:#f92672">&#34;nodemon&#34;</span>: <span style="color:#e6db74">&#34;^2.0.6&#34;</span>
+  }
+}
+</code></pre></div><p>Create file .env</p>
+<p><strong>.gitignore</strong></p>
+<pre><code>.env
+node_modules
+</code></pre><p>server.js</p>
+<p>npm run devStart</p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/post/6/" class="left arrow">&#8592;</a>
+		<a href="/post/8/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			
+			<span>
+			&copy; <time datetime="2020-12-17 13:31:10.229955 &#43;0200 EET m=&#43;0.065897712">2020</time> Jan Kaiponen. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

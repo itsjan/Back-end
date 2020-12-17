@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Completing the node.js Crash Course &middot; Learning Diary</title>
+
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		<link rel="stylesheet" href="/css/custom.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Learning Diary" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Learning Diary</h2>
+				</a>
+				<ul>
+    
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Jan Kaiponen
+        <br>
+        <span>on&nbsp;</span><time datetime="2020-11-19 15:08:26 &#43;0200 EET">November 19, 2020</time>
+</div>
+
+		<h1 class="post-title">Completing the node.js Crash Course</h1>
+<div class="post-line"></div>
+
+		
+
+		<p>I am finally getting to the end of the node.js Crash Course. It&rsquo;s been very basic so far, and there&rsquo;s not many things to note.</p>
+<h2 id="deployment-to-heroku-check-list">Deployment to Heroku Check-List</h2>
+<ol>
+<li><strong>PORT</strong> specified as process.env.PORT</li>
+<li><strong>package.json</strong> must specify a start script</li>
+</ol>
+<pre><code>&quot;scripts&quot;: {
+    &quot;start&quot;: &quot;node index&quot;,
+    &quot;dev&quot;: &quot;nodemon index&quot;
+  },
+</code></pre><ol>
+<li>
+<p>Sign up for a <a href="https://www.heroku.com/">Heroku</a> account.</p>
+</li>
+<li>
+<p>Have Heroku CLI installed. On a Mac:</p>
+</li>
+</ol>
+<pre><code>
+% brew tap heroku/brew &amp;&amp; brew install heroku
+</code></pre><ol start="5">
+<li>login</li>
+</ol>
+<pre><code>% heroku login
+</code></pre><ol start="6">
+<li>Create a new heroku app</li>
+</ol>
+<pre><code>% heroku create
+
+Creating app... done, ⬢ vast-basin-09192
+https://vast-basin-09192.herokuapp.com/ | https://git.heroku.com/vast-basin-09192.git
+</code></pre><ol start="7">
+<li>Add a new remote for the Git repo</li>
+</ol>
+<pre><code>% heroku git:remote -a vast-basin-09192
+
+set git remote heroku to https://git.heroku.com/vast-basin-09192.git
+</code></pre><ol start="8">
+<li>Commit to master and push to heroku</li>
+</ol>
+<pre><code>
+$ git push heroku master
+</code></pre><p><img src="/img/4_welcome.png" alt="published web app (front page)"></p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/post/3/" class="left arrow">&#8592;</a>
+		<a href="/post/5/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			
+			<span>
+			&copy; <time datetime="2020-12-17 13:31:10.221976 &#43;0200 EET m=&#43;0.057918372">2020</time> Jan Kaiponen. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>
