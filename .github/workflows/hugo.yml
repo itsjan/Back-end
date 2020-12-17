@@ -39,6 +39,7 @@ jobs:
     # Step 4 - Builds the site using the latest version of Hugo
     # Also specifies the theme we want to use
     - name: Build
+      working-directory: ./diary
       run: hugo --theme=tale
     # Step 5 - Create name file
     # - name: Create cname file
@@ -49,4 +50,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ../public
